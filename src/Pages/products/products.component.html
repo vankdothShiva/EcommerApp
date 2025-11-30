@@ -1,0 +1,33 @@
+<div class="text-center fs-3 fw-semibold">Exclusive Products</div>
+<div class="mb-5 mt-3">
+  <ul class="nav justify-content-center">
+    <li class="nav-item"  
+        *ngFor="let cat of Category" 
+        (click)="GetAllCategoryByID(cat.categoryId)">
+      <a class="nav-link">{{cat.categoryName}}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let prod of Product">
+      <div class="card product-card h-100 rounded-3">
+
+        <!-- Product Image -->
+        <div class="img-container">
+          <img [src]="prod.productImageUrl" class="card-img-top product-img" alt="Product Image">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title fw-semibold">{{ prod.productShortName }}</h5>
+          <p class="card-text text-danger fw-semibold">Price $ {{ prod.productPrice }}</p>
+
+          <button class="btn btn-dark w-100 mt-2">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

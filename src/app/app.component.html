@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg bg-body-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-3" href="#">Ecommerce</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- CHANGE me-auto TO ms-auto -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Home
+          </a>
+          <ul class="dropdown-menu ms-auto mb-2 mb-lg-0">
+            <li><a class="dropdown-item " href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+           pages
+          </a>
+          <ul class="dropdown-menu ms-auto mb-2 mb-lg-0">
+            <li><a class="dropdown-item" routerLink="/product" >Products</a></li>
+            <li><a class="dropdown-item" routerLink="product">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="product">Something else here</a></li>
+          </ul>
+        </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Contact US
+          </a>
+          <ul class="dropdown-menu ms-auto mb-2 mb-lg-0">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+
+
+
+        <i class="bi bi-search mx-3 pt-2">Search</i>       
+        <i class="bi bi-cart mx-3 pt-2">Carts</i>
+        <i class="bi bi-person mx-3 pt-2">Login</i>
+      </ul>
+
+   
+
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
