@@ -1,4 +1,4 @@
-
+/* /* 
   /* Card Hover Effect */
   .product-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -30,3 +30,56 @@
     border-color: #ff5722 !important;
     transition: 0.3s ease;
   }
+
+  .dropdown-menu-center {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.category-bar-container {
+  width: 100%;
+  background: #131921;
+  padding: 8px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+} 
+
+.category-bar {
+  display: inline-flex;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.category-item {
+  color: #fff;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 15px;
+}
+  /*
+
+.category-item:hover {
+  background: #232f3e;
+  border-radius: 4px;
+} */
+
+
+
+
+
+
+   

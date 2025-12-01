@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../app/Services/product.service';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgxPaginationModule],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
@@ -14,7 +14,7 @@ export class ProductsComponent {
   Category: any[] = [];
 
   constructor(private productServices: ProductService) {}
-
+categoryPage: number = 1;
   ngOnInit(): void {
 this.GetAllProducts();
 this.GetAllCategory();
