@@ -21,6 +21,9 @@ export class ProductService {
      GetAllCatoryByID(categoryId:number):Observable<any[]>{
     return this.httpProducts.get<any[]>('/api/amazon/GetAllProductsByCategoryId?id='+categoryId);
   }
+       InsertCustData(customerObj:any):Observable<any>{
+      return this.httpProducts.post('/api/amazon/RegisterCustomer',customerObj);
+  }
 
 
 
