@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../app/Services/product.service';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination'; 
 @Component({
   selector: 'app-products',
   standalone: true,
