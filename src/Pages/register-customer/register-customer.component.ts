@@ -19,11 +19,12 @@ constructor(private productService:ProductService,private fb: FormBuilder) {
 
   this.SignUpForms = this.fb.group({
       CustId: [2565, Validators.required],
-      Name: ['', Validators.required],
+      FullName: ['', Validators.required],
       MobileNo: ['', Validators.required],
       Email: ['', Validators.email],
       Username: ['', Validators.required],
       password: ['', Validators.required],
+      
 
     })
 

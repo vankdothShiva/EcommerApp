@@ -1,65 +1,86 @@
 <div class="login-page-bg">
-  <div class="container mt-5 ratio-4x3">
-    <div class="login-wrap">
-      <!-- 🔹 YOUR EXISTING LOGIN HTML (UNCHANGED) -->
+    <div class="container mt-5 ratio-4x3">
+        <div class="login-wrap">
+            <div class="container mt-3 ratio-4x3">
+                <div class="login-wrap">
+                    <div class="login-html">
+                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                            class="tab">Sign In</label>
+                        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
+                            class="tab">Sign Up</label>
+                        
+                        <div class="login-form">
+                            <!-- ✅ SIGN IN FORM -->
+                            <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" class="sign-in-htm">
+                                <div class="group">
+                                    <label for="user" class="label">Username</label>
+                                    <input id="user" type="text" class="input" formControlName="username">
+                                </div>
+                                <div class="group">
+                                    <label for="pass" class="label">Password</label>
+                                    <input id="pass" type="password" class="input" data-type="password"
+                                        formControlName="password">
+                                </div>
+                                <div class="group">
+                                    <input id="check" type="checkbox" class="check" formControlName="rememberMe"
+                                        checked>
+                                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                                </div>
+                                <div class="group">
+                                    <input type="submit" class="button" value="Sign In">
+                                </div>
+                                <div class="hr"></div>
+                                <div class="foot-lnk">
+                                    <a href="#forgot">Forgot Password?</a>
+                                </div>
+                            </form>
 
+                            <!-- ✅ SIGN UP FORM -->
+                            <form [formGroup]="SignUpForm" (ngSubmit)="signupdata()" class="sign-up-htm">
+                                <div class="group">
+                                    <label for="fullname" class="label">FullName</label>
+                                    <input id="fullname" type="text" class="input" formControlName="FullName">
+                                </div>
+                                <div class="group">
+                                    <label for="email" class="label">Email</label>
+                                    <input id="email" type="email" class="input" formControlName="Email">
+                                </div>
+                                <div class="group">
+                                    <label for="mobile" class="label">Mobile No</label>
+                                    <input id="mobile" type="text" class="input" formControlName="MobileNo">
+                                </div>
 
-<div class="container mt-5 ratio-4x3">
-<div class="login-wrap">
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-		<div class="login-form">
-			<div class="sign-in-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Keep me Signed in</label>
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign In">
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
-				</div>
-			</div>
-			<div class="sign-up-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
-				</div>
-		
+                                <div class="group">
+                                    <label class="label">Gender</label>
+                                    <div class="gender-options">
+                                        <label>
+                                            <input type="radio" name="choice" formControlName="choice"
+                                                value="male" />
+                                            Male
+                                        </label>
 
-			</div>
-		</div>
-	</div>
-</div>
-</div>
+                                        <label>
+                                            <input type="radio" name="choice" formControlName="choice"
+                                                value="female" />
+                                            Female
+                                        </label>
 
-
+                                        <label>
+                                            <input type="radio" name="choice" formControlName="choice"
+                                                value="other" />
+                                            Other
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="group">
+                                    <input type="submit" class="button" value="Sign Up">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
