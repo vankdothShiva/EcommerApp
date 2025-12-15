@@ -4,9 +4,10 @@
  * SignUp Model - Represents the structure of signup data
  */
 export interface SignUpModel {
-  FullName: string;
+  Name: string;
   Email: string;
-  MobileNo: string;
+  Password: string;
+   MobileNo: string;
   choice: 'male' | 'female' | 'other'; // Union type for gender
 }
 
@@ -17,8 +18,8 @@ export interface SignUpResponse {
   success: boolean;
   user: {
     id: number;
-    fullName: string;
-    email: string;
+    Name: string;
+    Email: string;
   };
   message: string;
 }
@@ -27,8 +28,9 @@ export interface SignUpResponse {
  * Initial values for signup form
  */
 export const SIGNUP_INITIAL_VALUES: SignUpModel = {
-  FullName: '',
+  Name: '',
   Email: '',
+  Password: '',
   MobileNo: '',
   choice: 'male' // default value
 };

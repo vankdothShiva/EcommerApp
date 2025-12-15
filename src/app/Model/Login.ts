@@ -1,6 +1,6 @@
 export interface LoginModel {
-  username: string;
-  password: string;
+  UserName: string;
+  UserPassword: string;
   rememberMe: boolean;
 }
 
@@ -9,7 +9,7 @@ export interface LoginResponse {
   token: string;
   user: {
     id: number;
-    username: string;
+    UserName: string;
     email: string;
   };
   message: string;
@@ -18,8 +18,8 @@ export interface LoginResponse {
 
 
 export const LOGIN_INITIAL_VALUES: LoginModel = {
-  username: '',
-  password: '',
+  UserName: '',
+  UserPassword: '',
   rememberMe: false
 };
 

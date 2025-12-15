@@ -26,5 +26,14 @@ export class ProductService {
   }
 
 
+         LoginData(LoginModel:any):Observable<any>{
+      return this.httpProducts.post('/api/Ecommerce/Login',LoginModel);
+  }
+
+   SignupData(SignUp:any):Observable<any>{
+      return this.httpProducts.post('api/Ecommerce/RegisterCustomer',SignUp);
+  }
+
+
 
 }
