@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LoginModel } from '../../app/Model/Login';
+import { LoginModel, LoginModelManago } from '../../app/Model/Login';
 import { ProductService } from '../../app/Services/product.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   LoginForm: FormGroup;
   SignUpForm: FormGroup;
 
-  constructor(private services: ProductService) {
+  constructor(private services: ProductService,private router: Router) {
     // Initialize forms in constructor
     this.LoginForm = new FormGroup({
       UserName: new FormControl('', Validators.required),
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
       rememberMe: new FormControl(false)
 
     });
+
 
 
 
@@ -51,8 +53,33 @@ export class LoginComponent implements OnInit {
 
       };
 
-      this.services.LoginData(this.SignUpForm.value).subscribe((res) => {
+      const LoginDataManago: LoginModelManago = {
+
+        UserName: this.LoginForm.value.UserName!,
+        Password: this.LoginForm.value.UserPassword!
+
+
+      };
+
+      this.services.LoginData(this.LoginForm.value).subscribe((res) => {
         console.log(res);
+      });
+
+
+
+      this.services.LoginDataManago(LoginDataManago).subscribe({
+        next: (res) => {
+          console.log('Login Success', res);
+
+          if (res.isSuccess) {
+            localStorage.setItem('token', res.result.token);
+            localStorage.setItem('user', JSON.stringify(res.result.user));
+            this.router.navigate(['/product']); // ✅ redirect
+          }
+        },
+        error: (err) => {
+          console.error('Login Failed', err.error.message);
+        }
       });
       console.log('Login Data:', loginData);
     } else {
@@ -71,7 +98,7 @@ export class LoginComponent implements OnInit {
 
     } else {
       console.log('SignUp Form Invalid');
-      // Mark all fields as touched to show validation errors
+   
       Object.keys(this.SignUpForm.controls).forEach(key => {
         this.SignUpForm.get(key)?.markAsTouched();
       });

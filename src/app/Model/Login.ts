@@ -24,6 +24,29 @@ export const LOGIN_INITIAL_VALUES: LoginModel = {
 };
 
 
+export interface LoginModelManago {
+  UserName: string;
+  Password: string;
+}
+
+export interface LoginResponse {
+  result: {
+    user: {
+      id: string;
+      email: string;
+      name: string;
+      phoneNumber: string;
+    };
+    token: string;
+  };
+  isSuccess: boolean;
+  message: string;
+}
+
+
+
+
+
 
 
 

@@ -15,4 +15,9 @@ import { RouterOutlet, RouterLinkWithHref, RouterModule, RouterLink } from '@ang
 })
 export class AppComponent {
   title = 'ecommerceApp';
+
+  OnLoginClick(){
+    LoginText:String
+  }
+
 }

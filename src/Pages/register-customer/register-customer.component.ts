@@ -34,7 +34,6 @@ constructor(private productService:ProductService,private fb: FormBuilder) {
   CustId: 0,
   Name: "string",
   MobileNo: "string",
-
   Password: "string"
 }
 onsubmit(){

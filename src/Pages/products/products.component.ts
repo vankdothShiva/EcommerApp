@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../app/Services/product.service';
 import { NgxPaginationModule } from 'ngx-pagination'; 
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -13,7 +14,9 @@ export class ProductsComponent {
   Product: any[] = [];
   Category: any[] = [];
 
-  constructor(private productServices: ProductService) {}
+  constructor(private productServices: ProductService,private router: Router) {
+    
+  }
 categoryPage: number = 1;
   ngOnInit(): void {
 this.GetAllProducts();
