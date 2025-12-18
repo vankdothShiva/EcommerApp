@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   LoginForm: FormGroup;
   SignUpForm: FormGroup;
 
-  constructor(private services: ProductService,private router: Router) {
+  constructor(private services: ProductService, private router: Router) {
     // Initialize forms in constructor
     this.LoginForm = new FormGroup({
       UserName: new FormControl('', Validators.required),
@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
           if (res.isSuccess) {
             localStorage.setItem('token', res.result.token);
             localStorage.setItem('user', JSON.stringify(res.result.user));
-            this.router.navigate(['/product']); // ✅ redirect
+            this.router.navigate(['/product']);
           }
         },
         error: (err) => {
@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
 
     } else {
       console.log('SignUp Form Invalid');
-   
+
       Object.keys(this.SignUpForm.controls).forEach(key => {
         this.SignUpForm.get(key)?.markAsTouched();
       });
