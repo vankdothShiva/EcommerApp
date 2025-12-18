@@ -10,39 +10,39 @@ export class ProductService {
 
   constructor(private httpProducts: HttpClient) { }
 
- // Api: string = "https://freeapi.miniprojectideas.com/api/amazon/GetAllProducts";
+  // Api: string = "https://freeapi.miniprojectideas.com/api/amazon/GetAllProducts";
 
-  GetAllProducts():Observable<any[]>{
+  GetAllProducts(): Observable<any[]> {
     return this.httpProducts.get<any[]>('/api/amazon/GetAllProducts');
   }
-   GetCartaory():Observable<any[]>{
+  GetCartaory(): Observable<any[]> {
     return this.httpProducts.get<any[]>('/api/amazon/GetAllCategory');
   }
 
-     GetAllCatoryByID(categoryId:number):Observable<any[]>{
-    return this.httpProducts.get<any[]>('/api/amazon/GetAllProductsByCategoryId?id='+categoryId);
+  GetAllCatoryByID(categoryId: number): Observable<any[]> {
+    return this.httpProducts.get<any[]>('/api/amazon/GetAllProductsByCategoryId?id=' + categoryId);
   }
-       InsertCustData(customerObj:any):Observable<any>{
-      return this.httpProducts.post('/api/amazon/RegisterCustomer',customerObj);
-  }
-
-
-         LoginData(LoginModel:any):Observable<any>{
-      return this.httpProducts.post('/api/Ecommerce/Login',LoginModel);
-  }
-
-   SignupData(SignUp:any):Observable<any>{
-      return this.httpProducts.post('api/Ecommerce/RegisterCustomer',SignUp);
+  InsertCustData(customerObj: any): Observable<any> {
+    return this.httpProducts.post('/api/amazon/RegisterCustomer', customerObj);
   }
 
 
-           LoginDataManago(LoginModel:LoginModelManago):Observable<any>{
-      return this.httpProducts.post<LoginModelManago>('https://localhost:7177/api/auth/login',LoginModel);
+  LoginData(LoginModel: any): Observable<any> {
+    return this.httpProducts.post('/api/Ecommerce/Login', LoginModel);
+  }
+
+  SignupData(SignUp: any): Observable<any> {
+    return this.httpProducts.post('api/Ecommerce/RegisterCustomer', SignUp);
+  }
+
+
+  LoginDataManago(LoginModel: LoginModelManago): Observable<any> {
+    return this.httpProducts.post<LoginModelManago>('https://localhost:7177/api/auth/login', LoginModel);
   }
 
 
 
-  
+
 
 
 
