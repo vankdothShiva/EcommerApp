@@ -8,7 +8,7 @@ export interface SignUpModel {
   Email: string;
   Password: string;
    MobileNo: string;
-  choice: 'male' | 'female' | 'other'; // Union type for gender
+  choice: 'Admin' | 'User' | 'other'; // Union type for gender
 }
 
 /**
@@ -32,5 +32,5 @@ export const SIGNUP_INITIAL_VALUES: SignUpModel = {
   Email: '',
   Password: '',
   MobileNo: '',
-  choice: 'male' // default value
+  choice: 'Admin' // default value
 };

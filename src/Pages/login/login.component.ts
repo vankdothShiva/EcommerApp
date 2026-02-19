@@ -31,11 +31,13 @@ export class LoginComponent implements OnInit {
 
 
     this.SignUpForm = new FormGroup({
-      Name: new FormControl('', Validators.required),
+      Name: new FormControl('', Validators.required),     //Email Name  PhoneNumber  Password  Role
       Email: new FormControl('', [Validators.required, Validators.email]),
-      MobileNo: new FormControl('', Validators.required),
+      // MobileNo: new FormControl('', Validators.required),
+      PhoneNumber:new FormControl('', Validators.required),
       Password: new FormControl('', Validators.required),
-      choice: new FormControl('', Validators.required)
+      choice: new FormControl('', Validators.required),
+     // Role:new FormControl('', Validators.required),
     });
   }
 
@@ -90,7 +92,7 @@ export class LoginComponent implements OnInit {
 
   signupdata(): void {
     if (this.SignUpForm.valid) {
-      this.services.SignupData(this.SignUpForm.value).subscribe((res) => {
+      this.services.SignUpDataManago(this.SignUpForm.value).subscribe((res) => {
         console.log(res);
       });
 

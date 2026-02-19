@@ -12,8 +12,14 @@ export class ProductService {
 
   // Api: string = "https://freeapi.miniprojectideas.com/api/amazon/GetAllProducts";
 
+
+
+  // GetAllProducts(): Observable<any[]> {         // //this cloud Api
+  //   return this.httpProducts.get<any[]>('/api/amazon/GetAllProducts');
+  // }
+
   GetAllProducts(): Observable<any[]> {
-    return this.httpProducts.get<any[]>('/api/amazon/GetAllProducts');
+    return this.httpProducts.get<any[]>('https://localhost:7157/api/Product');
   }
   GetCartaory(): Observable<any[]> {
     return this.httpProducts.get<any[]>('/api/amazon/GetAllCategory');
@@ -31,13 +37,17 @@ export class ProductService {
     return this.httpProducts.post('/api/Ecommerce/Login', LoginModel);
   }
 
-  SignupData(SignUp: any): Observable<any> {
-    return this.httpProducts.post('api/Ecommerce/RegisterCustomer', SignUp);
-  }
+  // SignupData(SignUp: any): Observable<any> {
+  //   return this.httpProducts.post('api/Ecommerce/RegisterCustomer', SignUp);
+  // }
 
 
   LoginDataManago(LoginModel: LoginModelManago): Observable<any> {
     return this.httpProducts.post<LoginModelManago>('https://localhost:7177/api/auth/login', LoginModel);
+  }
+
+   SignUpDataManago(SignUpModel: LoginModelManago): Observable<any> {
+    return this.httpProducts.post<LoginModelManago>('https://localhost:7177/api/auth/register', SignUpModel);
   }
 
 
